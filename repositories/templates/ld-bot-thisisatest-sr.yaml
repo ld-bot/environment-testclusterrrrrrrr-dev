@@ -1,0 +1,21 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: ld-bot
+    provider: github
+    repository: thisisatest
+  name: ld-bot-thisisatest
+spec:
+  description: Imported application for ld-bot/thisisatest
+  httpCloneURL: https://github.com/ld-bot/thisisatest.git
+  org: ld-bot
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: thisisatest
+  scheduler:
+    kind: ""
+    name: ""
+  url: https://github.com/ld-bot/thisisatest.git
