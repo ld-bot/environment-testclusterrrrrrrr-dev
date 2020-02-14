@@ -1,38 +1,80 @@
 autoUpdate:
   enabled: false
   schedule: ""
+bootConfigURL: https://github.com/cloudbees/cloudbees-jenkins-x-boot-config.git
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: true
-  project: ""
   azure: {}
+  clusterName: testclusterrrrrrrr
+  devEnvApprovers:
+  - ld-bot
+  - logandonley
+  environmentGitOwner: ld-bot
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: ldonley
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  zone: us-east1-b
 environments:
-  - key: dev
-  - key: staging
-  - key: production
+- ingress:
+    domain: 35.243.239.198.nip.io
+    externalDNS: false
+    namespaceSubDomain: -jx.
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 35.243.239.198.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
     production: false
 kaniko: true
+repository: nexus
 secretStorage: vault
 storage:
+  backup:
+    enabled: false
+    url: ""
   logs:
     enabled: true
-    url: ""
+    url: gs://testclusterrrrrrrr-logs-ae6fd597-5d75-45a3-bfa5-6e3019d
   reports:
     enabled: true
-    url: ""
+    url: gs://testclusterrrrrrrr-reports-5f3c27b9-8ec1-4262-a27e-459c
   repository:
     enabled: true
-    url: ""
+    url: gs://testclusterrrrrrrr-repository-33909874-291e-4781-9788-2
+vault: {}
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
   ref: 2.0.1139+cjxd.6
   url: https://github.com/cloudbees/cloudbees-jenkins-x-versions.git
