@@ -1,0 +1,7 @@
+dependencies:
+- host: github.com
+  owner: ld-bot
+  repo: thisisatest
+  url: https://github.com/ld-bot/thisisatest.git
+  version: ""
+  versionURL: ""
